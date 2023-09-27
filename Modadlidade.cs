@@ -126,7 +126,8 @@ namespace estudio
                 {
                     DAO_Conexao.con.Open();
                     //Console.WriteLine("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" +  qtde_aulas ); 
-                    MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas, DAO_Conexao.con);
+                    MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = " + Preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas+ " WHERE descricaoModalidade= '"+ Descricao+"'", DAO_Conexao.con);
+                    Console.WriteLine("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = " + Preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas);
                     atualiza.ExecuteNonQuery();
                     exc = true;
                 }
@@ -148,7 +149,8 @@ namespace estudio
                 try
                 {
                     DAO_Conexao.con.Open();
-                    MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativo = 1 where descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
+                    MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
+                Console.WriteLine("update Estudio_Modalidade set ativo = 1 where descricaoModalidade='" + Descricao + "'");
                     exclui.ExecuteNonQuery();
                     exc = true;
                 }
