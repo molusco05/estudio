@@ -118,7 +118,7 @@ namespace estudio
 
         private void conaultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form8 consultarModalidade = new Form8();
+            Form8 consultarModalidade = new Form8(1);
             consultarModalidade.MdiParent = this;
             consultarModalidade.Show();
 

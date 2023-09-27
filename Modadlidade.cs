@@ -14,19 +14,24 @@ namespace estudio
         private int qtde_alunos, qtde_aulas;
 
 
+
+
         public string Descricao1 { get => Descricao; set => Descricao = value; }
-        public int Qtde_alunos { get => Qtde_alunos; set => Qtde_alunos = value; }
+        public int Qtde_alunos { get => qtde_alunos; set => qtde_alunos = value; }
         public float Preco1 { get => Preco; set => Preco = value; }
         public int Qtde_aulas { get => qtde_aulas; set => qtde_aulas = value; }
 
         public Modadlidade(String descricao, float preco, int qtde_alunos, int qtde_aulas)
         {
-
+            Descricao1 = descricao;
+            Preco1 = preco;
+            Qtde_alunos = qtde_alunos;
+            Qtde_aulas = qtde_aulas;
         }
 
         public Modadlidade(String descricao)
         {
-
+            Descricao1 = descricao;
         }
 
         public Modadlidade()
@@ -42,8 +47,9 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas);
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas, DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade , precoModalidade, qtdeAlunos, qtdeAulas) values('" + Descricao + "','" + Preco + "','" + qtde_alunos + "','" + qtde_aulas + "')", DAO_Conexao.con);
+                Console.WriteLine("insert into Estudio_Modalidade (descricaoModalidade , precoModalidade, qtdeAlunos, qtdeAulas) values('" + Descricao + "','" + Preco + "','" + qtde_alunos + "','" + qtde_aulas + "')");
+               // MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set descricaoModalidade = '" + Descricao + "', precoModalidade = '" + Preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas, DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }

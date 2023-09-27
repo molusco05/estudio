@@ -13,11 +13,19 @@ namespace estudio
 {
     public partial class Form8 : Form
     {
-
-        public Form8()
+        int opi;
+        public Form8(int op)
         {
             InitializeComponent();
-            Modadlidade m = new Modadlidade();
+            if (op == 1)
+            {
+                btnConsultarUma.Text = "consultar uma";
+            }
+            else
+            {
+                btnConsultarTodos.Text = "consultar todas";
+            }
+            opi = op;
 
 
 

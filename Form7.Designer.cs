@@ -30,7 +30,6 @@ namespace estudio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtAulas = new System.Windows.Forms.TextBox();
             this.txtAlunos = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
@@ -39,12 +38,13 @@ namespace estudio
             this.lblAlunos = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txtAulas);
             this.groupBox1.Controls.Add(this.txtAlunos);
             this.groupBox1.Controls.Add(this.txtPreco);
@@ -59,20 +59,6 @@ namespace estudio
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "volei",
-            "basquete",
-            "futsal",
-            "natação",
-            "atletismo"});
-            this.comboBox1.Location = new System.Drawing.Point(171, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(418, 21);
-            this.comboBox1.TabIndex = 9;
             // 
             // txtAulas
             // 
@@ -147,6 +133,13 @@ namespace estudio
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(171, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(418, 20);
+            this.textBox1.TabIndex = 9;
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +157,6 @@ namespace estudio
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtAulas;
         private System.Windows.Forms.TextBox txtAlunos;
         private System.Windows.Forms.TextBox txtPreco;
@@ -173,5 +165,6 @@ namespace estudio
         private System.Windows.Forms.Label lblAlunos;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

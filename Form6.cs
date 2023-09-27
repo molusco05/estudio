@@ -18,13 +18,26 @@ namespace estudio
             InitializeComponent();
         }
 
-
+        
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Modadlidade m = new Modadlidade();
-            m.excluirModalidade();
+            Modadlidade m = new Modadlidade(txtDescricao.Text);
+              if (m.excluirModalidade())
+                {
+                    MessageBox.Show("excluido com secesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("erro ao excluir");
+                }
+            
 
 
+
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
 
         }
     }

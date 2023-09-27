@@ -31,15 +31,15 @@ namespace estudio
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.btnExcluir);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.lblDescricao);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(52, 31);
@@ -60,20 +60,6 @@ namespace estudio
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "volei",
-            "basquete",
-            "futsal",
-            "natação",
-            "atletismo"});
-            this.comboBox1.Location = new System.Drawing.Point(201, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 26);
-            this.comboBox1.TabIndex = 1;
-            // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
@@ -84,6 +70,13 @@ namespace estudio
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(214, 102);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(162, 24);
+            this.txtDescricao.TabIndex = 3;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +85,7 @@ namespace estudio
             this.Controls.Add(this.groupBox1);
             this.Name = "Form6";
             this.Text = "Form6";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,7 +96,7 @@ namespace estudio
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txtDescricao;
     }
 }

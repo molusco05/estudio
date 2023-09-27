@@ -23,11 +23,23 @@ namespace estudio
         {
 
         }
-
+     
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            Modadlidade m = new Modadlidade();
-            m.atualizarModalidade();
+          
+          
+            Modadlidade m = new Modadlidade(txtDescricao.Text, float.Parse(txtPreco.Text), int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text));
+         
+            
+                if (m.atualizarModalidade())
+                {
+                    MessageBox.Show("atualizado com secesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("erro ao atualizar");
+                }
+            
         }
 
         private void Form5_Load(object sender, EventArgs e)

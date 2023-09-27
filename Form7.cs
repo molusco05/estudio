@@ -16,11 +16,24 @@ namespace estudio
         {
             InitializeComponent();
         }
-
+        
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Modadlidade m = new Modadlidade();
-            m.cadastrarModalidade();
-        }
+            Modadlidade m = new Modadlidade(textBox1.Text, float.Parse(txtPreco.Text), int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text));
+           
+            
+                if (m.cadastrarModalidade())
+                {
+                    MessageBox.Show("cadastrado com secesso!!!");
+                }
+                else
+                {
+                    MessageBox.Show("erro ao cadastrar");
+                }
+            
+
+            
+        
+    }
     }
 }
