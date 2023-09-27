@@ -24,7 +24,7 @@ namespace estudio
             Modadlidade m = new Modadlidade(txtDescricao.Text);
               if (m.excluirModalidade())
                 {
-                    MessageBox.Show("excluido com secesso!!!");
+                    MessageBox.Show("excluido com secesso!");
                 }
                 else
                 {
