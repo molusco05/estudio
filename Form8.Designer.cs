@@ -32,7 +32,6 @@ namespace estudio
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConsultarUma = new System.Windows.Forms.Button();
             this.btnConsultarTodos = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtAulas = new System.Windows.Forms.TextBox();
             this.txtAlunos = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
@@ -40,14 +39,15 @@ namespace estudio
             this.lblAlunos = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.btnConsultarUma);
             this.groupBox1.Controls.Add(this.btnConsultarTodos);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.txtAulas);
             this.groupBox1.Controls.Add(this.txtAlunos);
             this.groupBox1.Controls.Add(this.txtPreco);
@@ -56,11 +56,9 @@ namespace estudio
             this.groupBox1.Controls.Add(this.lblPreco);
             this.groupBox1.Controls.Add(this.lblDescricao);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(109, 66);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(82, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(848, 422);
+            this.groupBox1.Size = new System.Drawing.Size(636, 343);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consultar Modalidades";
@@ -69,10 +67,9 @@ namespace estudio
             // btnConsultarUma
             // 
             this.btnConsultarUma.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnConsultarUma.Location = new System.Drawing.Point(405, 292);
-            this.btnConsultarUma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultarUma.Location = new System.Drawing.Point(304, 237);
             this.btnConsultarUma.Name = "btnConsultarUma";
-            this.btnConsultarUma.Size = new System.Drawing.Size(380, 47);
+            this.btnConsultarUma.Size = new System.Drawing.Size(285, 38);
             this.btnConsultarUma.TabIndex = 11;
             this.btnConsultarUma.Text = "Consultar uma";
             this.btnConsultarUma.UseVisualStyleBackColor = false;
@@ -81,63 +78,42 @@ namespace estudio
             // btnConsultarTodos
             // 
             this.btnConsultarTodos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnConsultarTodos.Location = new System.Drawing.Point(51, 292);
-            this.btnConsultarTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultarTodos.Location = new System.Drawing.Point(38, 237);
             this.btnConsultarTodos.Name = "btnConsultarTodos";
-            this.btnConsultarTodos.Size = new System.Drawing.Size(347, 47);
+            this.btnConsultarTodos.Size = new System.Drawing.Size(260, 38);
             this.btnConsultarTodos.TabIndex = 10;
             this.btnConsultarTodos.Text = "Consultar Todos";
             this.btnConsultarTodos.UseVisualStyleBackColor = false;
             this.btnConsultarTodos.Click += new System.EventHandler(this.btnConsultarTodos_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "volei",
-            "basquete",
-            "futsal",
-            "natação",
-            "atletismo"});
-            this.comboBox1.Location = new System.Drawing.Point(228, 44);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(556, 33);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // txtAulas
             // 
-            this.txtAulas.Location = new System.Drawing.Point(259, 201);
-            this.txtAulas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAulas.Location = new System.Drawing.Point(194, 163);
             this.txtAulas.Name = "txtAulas";
-            this.txtAulas.Size = new System.Drawing.Size(525, 30);
+            this.txtAulas.Size = new System.Drawing.Size(395, 26);
             this.txtAulas.TabIndex = 8;
             // 
             // txtAlunos
             // 
-            this.txtAlunos.Location = new System.Drawing.Point(259, 155);
-            this.txtAlunos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAlunos.Location = new System.Drawing.Point(194, 126);
             this.txtAlunos.Name = "txtAlunos";
-            this.txtAlunos.Size = new System.Drawing.Size(525, 30);
+            this.txtAlunos.Size = new System.Drawing.Size(395, 26);
             this.txtAlunos.TabIndex = 7;
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(228, 101);
-            this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPreco.Location = new System.Drawing.Point(171, 82);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(556, 30);
+            this.txtPreco.Size = new System.Drawing.Size(418, 26);
             this.txtPreco.TabIndex = 6;
             // 
             // lblAulas
             // 
             this.lblAulas.AutoSize = true;
             this.lblAulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAulas.Location = new System.Drawing.Point(93, 201);
-            this.lblAulas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAulas.Location = new System.Drawing.Point(70, 163);
             this.lblAulas.Name = "lblAulas";
-            this.lblAulas.Size = new System.Drawing.Size(131, 24);
+            this.lblAulas.Size = new System.Drawing.Size(100, 18);
             this.lblAulas.TabIndex = 3;
             this.lblAulas.Text = "qtde de Aulas:";
             // 
@@ -145,10 +121,9 @@ namespace estudio
             // 
             this.lblAlunos.AutoSize = true;
             this.lblAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlunos.Location = new System.Drawing.Point(93, 155);
-            this.lblAlunos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAlunos.Location = new System.Drawing.Point(70, 126);
             this.lblAlunos.Name = "lblAlunos";
-            this.lblAlunos.Size = new System.Drawing.Size(143, 24);
+            this.lblAlunos.Size = new System.Drawing.Size(109, 18);
             this.lblAlunos.TabIndex = 2;
             this.lblAlunos.Text = "qtde de Alunos:";
             // 
@@ -156,10 +131,9 @@ namespace estudio
             // 
             this.lblPreco.AutoSize = true;
             this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreco.Location = new System.Drawing.Point(83, 100);
-            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPreco.Location = new System.Drawing.Point(62, 81);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(65, 24);
+            this.lblPreco.Size = new System.Drawing.Size(52, 18);
             this.lblPreco.TabIndex = 1;
             this.lblPreco.Text = "Preco:";
             // 
@@ -167,20 +141,25 @@ namespace estudio
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(83, 44);
-            this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescricao.Location = new System.Drawing.Point(62, 36);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(99, 24);
+            this.lblDescricao.Size = new System.Drawing.Size(80, 18);
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(171, 36);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(418, 26);
+            this.txtDescricao.TabIndex = 12;
+            // 
             // Form8
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form8";
             this.Text = "Form8";
             this.Load += new System.EventHandler(this.Form8_Load);
@@ -193,7 +172,6 @@ namespace estudio
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtAulas;
         private System.Windows.Forms.TextBox txtAlunos;
         private System.Windows.Forms.TextBox txtPreco;
@@ -203,5 +181,6 @@ namespace estudio
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Button btnConsultarTodos;
         private System.Windows.Forms.Button btnConsultarUma;
+        private System.Windows.Forms.TextBox txtDescricao;
     }
 }

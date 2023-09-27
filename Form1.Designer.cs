@@ -146,7 +146,7 @@ namespace estudio
             // 
             this.conaultarModalidadeToolStripMenuItem.Name = "conaultarModalidadeToolStripMenuItem";
             this.conaultarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.conaultarModalidadeToolStripMenuItem.Text = "conaultar modalidade";
+            this.conaultarModalidadeToolStripMenuItem.Text = "consultar modalidade";
             this.conaultarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.conaultarModalidadeToolStripMenuItem_Click);
             // 
             // groupBox1

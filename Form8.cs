@@ -65,6 +65,7 @@ namespace estudio
         {
             Modadlidade m = new Modadlidade();
             m.consultarModalidade();
+
         }
 
         private void Form8_Load(object sender, EventArgs e)

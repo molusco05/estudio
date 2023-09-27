@@ -73,6 +73,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand consulta = new MySqlCommand("select * from Estudio_Modalidade where  descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
+                Console.WriteLine("select * from Estudio_Modalidade where  descricaoModalidade = '" + Descricao + "'");
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -99,6 +100,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand consulta = new MySqlCommand("select * from Estudio_Modalidade ", DAO_Conexao.con);
+                Console.WriteLine("select * from Estudio_Modalidade ");
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
