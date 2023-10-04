@@ -65,28 +65,27 @@ namespace estudio
             return cad;
         }
 
-        public MySqlDataReader consultarModalidade()
+        public MySqlDataReader consultarModalidade(String descricao)
         {
             MySqlDataReader resultado = null;
             //bool cons = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Modalidade where  descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
-                Console.WriteLine("select * from Estudio_Modalidade where  descricaoModalidade = '" + Descricao + "'");
+                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Modalidade where  descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
+                Console.WriteLine("select * from Estudio_Modalidade where  descricaoModalidade = '" + descricao + "'");
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
                     //cons = true;
+                    Console.WriteLine("entrou1");
+                   
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
+
             }
 
             return resultado;
@@ -104,16 +103,12 @@ namespace estudio
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
-                   // cons = true;
+                    // cons = true;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
             }
 
             return resultado;
@@ -145,14 +140,14 @@ namespace estudio
             }
             }
 
-            public bool excluirModalidade()
+            public bool excluirModalidade(String descricao)
             {
                 bool exc = false;
                 try
                 {
                     DAO_Conexao.con.Open();
-                    MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade='" + Descricao + "'", DAO_Conexao.con);
-                Console.WriteLine("update Estudio_Modalidade set ativo = 1 where descricaoModalidade='" + Descricao + "'");
+                    MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade='" + descricao + "'", DAO_Conexao.con);
+                Console.WriteLine("update Estudio_Modalidade set ativo = 1 where descricaoModalidade='" + descricao + "'");
                     exclui.ExecuteNonQuery();
                     exc = true;
                 }

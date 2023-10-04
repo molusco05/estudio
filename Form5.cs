@@ -28,7 +28,7 @@ namespace estudio
         {
           
           
-            Modadlidade m = new Modadlidade(txtDescricao.Text, float.Parse(txtPreco.Text), int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text));
+            Modadlidade m = new Modadlidade(comboBox1.Text, float.Parse(txtPreco.Text), int.Parse(txtAlunos.Text), int.Parse(txtAulas.Text));
          
             
                 if (m.atualizarModalidade())
@@ -43,6 +43,11 @@ namespace estudio
         }
 
         private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -32,13 +32,13 @@ namespace estudio
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDescricao);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.btnExcluir);
             this.groupBox1.Controls.Add(this.lblDescricao);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,12 +70,14 @@ namespace estudio
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // txtDescricao
+            // comboBox1
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(214, 102);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(162, 24);
-            this.txtDescricao.TabIndex = 3;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(215, 105);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(161, 26);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form6
             // 
@@ -97,6 +99,6 @@ namespace estudio
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

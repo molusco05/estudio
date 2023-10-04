@@ -13,30 +13,59 @@ namespace estudio
 {
     public partial class Form6 : Form
     {
-        public Form6()
+        public Form6(int op)
         {
             InitializeComponent();
+            
+            Modadlidade cad = new Modadlidade();
+            MySqlDataReader r = cad.consultarTodasModalidade();
+            //while (r.Read())
+            //{
+                comboBox1.Items.Add(r["descricaoModalidade"].ToString());
+                DAO_Conexao.con.Close();
+               
+                if (op == 2)
+                {
+                    btnExcluir.Visible = true;
+                }
+
+
+            //}
+            
         }
+
+
 
         
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Modadlidade m = new Modadlidade(txtDescricao.Text);
-              if (m.excluirModalidade())
-                {
-                    MessageBox.Show("excluido com secesso!");
-                }
-                else
-                {
-                    MessageBox.Show("erro ao excluir");
-                }
-            
+
+         
+            Modadlidade m = new Modadlidade(comboBox1.Text);
+
+
+           // if (m.excluirModalidade(comboBox1.Text)
+                //{
+                  //  MessageBox.Show("excluido com secesso!");
+                //}
+              // else
+               // {
+                   // MessageBox.Show("erro ao excluir");
+               // }
+
+
+         
 
 
 
         }
 
         private void Form6_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

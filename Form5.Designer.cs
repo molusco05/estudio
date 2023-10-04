@@ -38,13 +38,13 @@ namespace estudio
             this.lblAlunos = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDescricao);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.txtAulas);
             this.groupBox1.Controls.Add(this.txtAlunos);
             this.groupBox1.Controls.Add(this.txtPreco);
@@ -59,6 +59,7 @@ namespace estudio
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtAulas
             // 
@@ -134,12 +135,13 @@ namespace estudio
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // txtDescricao
+            // comboBox1
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(194, 36);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(394, 20);
-            this.txtDescricao.TabIndex = 9;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(194, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(394, 21);
+            this.comboBox1.TabIndex = 9;
             // 
             // Form5
             // 
@@ -167,6 +169,6 @@ namespace estudio
         private System.Windows.Forms.Label lblAlunos;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

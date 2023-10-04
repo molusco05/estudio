@@ -106,7 +106,7 @@ namespace estudio
 
         private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form6 excluirModalidade = new Form6();
+            Form6 excluirModalidade = new Form6(2);
             excluirModalidade.MdiParent = this;
             excluirModalidade.Show();
         }
@@ -121,6 +121,14 @@ namespace estudio
             Form8 consultarModalidade = new Form8(1);
             consultarModalidade.MdiParent = this;
             consultarModalidade.Show();
+
+        }
+
+        private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form10 f10 = new Form10(1);
+            f10.MdiParent = this;
+            f10.Show();
 
         }
     }

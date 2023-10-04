@@ -17,6 +17,8 @@ namespace estudio
         public Form8(int op)
         {
             InitializeComponent();
+
+
             if (op == 1)
             {
                 btnConsultarUma.Text = "consultar uma";
@@ -26,6 +28,20 @@ namespace estudio
                 btnConsultarTodos.Text = "consultar todas";
             }
             opi = op;
+
+            Modadlidade cad = new Modadlidade();
+            MySqlDataReader r = cad.consultarTodasModalidade();
+            //while(r.Read())
+            //{
+              comboBox1.Items.Add(r["descricaoModalidade"].ToString());
+                DAO_Conexao.con.Close();
+
+                if (op == 2)
+                {
+                    btnConsultarTodos.Visible = true;
+                }
+
+            //}
 
 
 
@@ -58,13 +74,31 @@ namespace estudio
         private void btnConsultarTodos_Click(object sender, EventArgs e)
         {
             Modadlidade m = new Modadlidade();
-            m.consultarTodasModalidade();
+            MySqlDataReader banc = m.consultarTodasModalidade();
+
+            Console.WriteLine("entrou");
+            txtPreco.Text = banc["precoModalidade"].ToString();
+            txtAulas.Text = banc["qtdeAulas"].ToString();
+            txtAlunos.Text = banc["qtdeAlunos"].ToString();
+
+            DAO_Conexao.con.Close();
         }
 
         private void btnConsultarUma_Click(object sender, EventArgs e)
         {
             Modadlidade m = new Modadlidade();
-            m.consultarModalidade();
+            MySqlDataReader  banco = m.consultarModalidade(comboBox1.Text);
+
+            //while (banco.Read())
+            //{
+                Console.WriteLine("entrou");
+                txtPreco.Text = banco["precoModalidade"].ToString();
+                txtAulas.Text = banco["qtdeAulas"].ToString();
+                txtAlunos.Text = banco["qtdeAlunos"].ToString();
+
+                    
+           // }
+            DAO_Conexao.con.Close();
 
         }
 
@@ -75,6 +109,11 @@ namespace estudio
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

@@ -39,13 +39,13 @@ namespace estudio
             this.lblAlunos = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDescricao);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.btnConsultarUma);
             this.groupBox1.Controls.Add(this.btnConsultarTodos);
             this.groupBox1.Controls.Add(this.txtAulas);
@@ -147,12 +147,14 @@ namespace estudio
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // txtDescricao
+            // comboBox1
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(171, 36);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(418, 26);
-            this.txtDescricao.TabIndex = 12;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(203, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(386, 28);
+            this.comboBox1.TabIndex = 12;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // Form8
             // 
@@ -181,6 +183,6 @@ namespace estudio
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Button btnConsultarTodos;
         private System.Windows.Forms.Button btnConsultarUma;
-        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
