@@ -47,9 +47,7 @@ namespace estudio
 
         private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //cadLogin cad_login = new cadLogin();
-            //cad_login.MdiParent = this;
-            //cad_login.Show();
+            
             Form2 form2 = new Form2();
             form2.MdiParent = this;
             form2.Show();
@@ -129,6 +127,27 @@ namespace estudio
             Form10 f10 = new Form10(1);
             f10.MdiParent = this;
             f10.Show();
+
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExcluirTurma ex = new ExcluirTurma();
+            ex.MdiParent = this;
+            ex.Show();
+
+        }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form9 f9 = new Form9();
+            f9.MdiParent = this;
+            f9.Show();
+
+        }
+
+        private void buscarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
