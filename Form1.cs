@@ -97,7 +97,7 @@ namespace estudio
 
         private void atualizarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 atualizarModalidade = new Form5();
+            Form5 atualizarModalidade = new Form5(1);
             atualizarModalidade.MdiParent = this;
             atualizarModalidade.Show();
         }
@@ -147,6 +147,13 @@ namespace estudio
         }
 
         private void buscarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form11 f11 = new Form11();
+            f11.MdiParent = this;
+            f11.Show();
+        }
+
+        private void turrmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

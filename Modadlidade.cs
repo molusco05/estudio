@@ -101,10 +101,7 @@ namespace estudio
                 MySqlCommand consulta = new MySqlCommand("select * from Estudio_Modalidade ", DAO_Conexao.con);
                 Console.WriteLine("select * from Estudio_Modalidade ");
                 resultado = consulta.ExecuteReader();
-                if (resultado.Read())
-                {
-                    // cons = true;
-                }
+                
             }
             catch (Exception ex)
             {

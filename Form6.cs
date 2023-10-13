@@ -16,22 +16,17 @@ namespace estudio
         public Form6(int op)
         {
             InitializeComponent();
-            
+
             Modadlidade cad = new Modadlidade();
             MySqlDataReader r = cad.consultarTodasModalidade();
-            //while (r.Read())
-            //{
+            while (r.Read())
+            {
                 comboBox1.Items.Add(r["descricaoModalidade"].ToString());
-                DAO_Conexao.con.Close();
-               
-                if (op == 2)
-                {
-                    btnExcluir.Visible = true;
-                }
 
+            }
 
-            //}
-            
+            DAO_Conexao.con.Close();
+
         }
 
 
@@ -40,21 +35,19 @@ namespace estudio
         private void btnExcluir_Click(object sender, EventArgs e)
         {
 
-         
+
             Modadlidade m = new Modadlidade(comboBox1.Text);
+            if (m.atualizarModalidade())
+            {
+                MessageBox.Show("excluido com secesso!!!");
+            }
+            else
+            {
+                MessageBox.Show("erro ao excluir");
+            }
 
 
-           // if (m.excluirModalidade(comboBox1.Text)
-                //{
-                  //  MessageBox.Show("excluido com secesso!");
-                //}
-              // else
-               // {
-                   // MessageBox.Show("erro ao excluir");
-               // }
 
-
-         
 
 
 

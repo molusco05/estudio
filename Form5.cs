@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace estudio
 {
     public partial class Form5 : Form
     {
-        public Form5()
+        
+        public Form5(int op)
         {
             InitializeComponent();
+
+           
+
+            Modadlidade cad = new Modadlidade();
+            MySqlDataReader r = cad.consultarTodasModalidade();
+            while (r.Read())
+            {
+                comboBox1.Items.Add(r["descricaoModalidade"].ToString());
+
+            }
+
+            DAO_Conexao.con.Close();
+
         }
 
 

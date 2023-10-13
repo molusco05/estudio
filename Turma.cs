@@ -9,30 +9,30 @@ namespace estudio
 {
     class Turma
     {
-        private String professor, diaSemana, hora;
-        private int modalidades;
+        private String professor, diaSemana, hora, modalidade;
 
-        public int Modalidades { get => modalidades; set => modalidades = value; }
+
+        public string Modalidades { get => modalidade; set => modalidade = value; }
         public string Professor { get => Professor1; set => Professor1 = value; }
         public string Professor1 { get => Professor2; set => Professor2 = value; }
         public string Professor2 { get => professor; set => professor = value; }
 
-        public Turma(int modalidades,String professor, String diaSemana, String hora )
+        public Turma(String modalidades,String professor, String diaSemana, String hora )
         {
-            this.modalidades = modalidades;
+            this.modalidade = modalidades;
             this.professor = professor;
             this.diaSemana = diaSemana;
             this.hora = hora;
         }
 
-        public Turma(int modalidades)
+        public Turma(String modalidades)
         {
-            this.modalidades = modalidades;
+            this.modalidade = modalidades;
         }
 
-        public Turma(int modalidades, String diaSemana)
+        public Turma(String modalidades, String diaSemana)
         {
-            this.modalidades = modalidades;
+            this.modalidade = modalidades;
             this.diaSemana = diaSemana;
         }
 
@@ -42,7 +42,7 @@ namespace estudio
         }
 
 
-        public bool cadastrarTurma(String diaSemana, String hora, String professor)
+        public bool cadastrarTurma()
         {
 
             bool cad = false;
@@ -50,8 +50,8 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidades + "','" + professor + "','" + diaSemana + "','" + hora + "')", DAO_Conexao.con);
-                Console.WriteLine("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidades + "','" + professor + "','" + diaSemana + "','" + hora + "')");
+                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')", DAO_Conexao.con);
+                Console.WriteLine("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -75,7 +75,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Turma set ativa = 1 where idModalidade='" + modalidades + "' and diaSemanaTurma='" + diaSemana + "' and horaTurma='" + hora + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Turma set ativa = 1 where idModalidade='" + modalidade + "' and diaSemanaTurma='" + diaSemana + "' and horaTurma='" + hora + "'", DAO_Conexao.con);
 
                 exclui.ExecuteNonQuery();
                 exc = true;
@@ -163,7 +163,28 @@ namespace estudio
 
         }
 
-
+        public bool atualizarTurma()
+        {
+            bool exc = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+               
+                MySqlCommand atualiza = new MySqlCommand("update Turma set modalidade = ('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')", DAO_Conexao.con);
+                Console.WriteLine("update Turma set modalidade = ('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
+                atualiza.ExecuteNonQuery();
+                exc = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return exc;
+        }
 
 
 

@@ -31,19 +31,15 @@ namespace estudio
 
             Modadlidade cad = new Modadlidade();
             MySqlDataReader r = cad.consultarTodasModalidade();
-            //while(r.Read())
-            //{
-              comboBox1.Items.Add(r["descricaoModalidade"].ToString());
-                DAO_Conexao.con.Close();
+            while(r.Read())
+            {
+                comboBox1.Items.Add(r["descricaoModalidade"].ToString());
 
-                if (op == 2)
-                {
-                    btnConsultarTodos.Visible = true;
-                }
+            }
+            
+            DAO_Conexao.con.Close();
 
-            //}
-
-
+          
 
 
         }
@@ -76,12 +72,15 @@ namespace estudio
             Modadlidade m = new Modadlidade();
             MySqlDataReader banc = m.consultarTodasModalidade();
 
-            Console.WriteLine("entrou");
-            txtPreco.Text = banc["precoModalidade"].ToString();
-            txtAulas.Text = banc["qtdeAulas"].ToString();
-            txtAlunos.Text = banc["qtdeAlunos"].ToString();
 
+            while (banc.Read())
+            {
+                dataGridView1.Rows.Add(banc["descricaoModalidade"].ToString(), banc["precoModalidade"].ToString(), banc["qtdeAulas"].ToString(), banc["qtdeAlunos"].ToString());
+            }
             DAO_Conexao.con.Close();
+
+          
+     
         }
 
         private void btnConsultarUma_Click(object sender, EventArgs e)
@@ -90,14 +89,14 @@ namespace estudio
             MySqlDataReader  banco = m.consultarModalidade(comboBox1.Text);
 
             //while (banco.Read())
-            //{
+            {
                 Console.WriteLine("entrou");
                 txtPreco.Text = banco["precoModalidade"].ToString();
                 txtAulas.Text = banco["qtdeAulas"].ToString();
                 txtAlunos.Text = banco["qtdeAlunos"].ToString();
 
                     
-           // }
+            }
             DAO_Conexao.con.Close();
 
         }
