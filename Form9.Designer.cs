@@ -33,7 +33,6 @@ namespace estudio
             this.txtModalidade = new System.Windows.Forms.TextBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtHora = new System.Windows.Forms.TextBox();
             this.txtDiaSemana = new System.Windows.Forms.TextBox();
@@ -42,12 +41,20 @@ namespace estudio
             this.lblDiaSemana = new System.Windows.Forms.Label();
             this.lblProfessor = new System.Windows.Forms.Label();
             this.lblModalidade = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idModalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtModalidade);
             this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -60,10 +67,10 @@ namespace estudio
             this.groupBox1.Controls.Add(this.lblProfessor);
             this.groupBox1.Controls.Add(this.lblModalidade);
             this.groupBox1.Location = new System.Drawing.Point(47, 69);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(656, 491);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(781, 491);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CadastrarTurma";
@@ -72,7 +79,7 @@ namespace estudio
             // txtModalidade
             // 
             this.txtModalidade.Location = new System.Drawing.Point(163, 84);
-            this.txtModalidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModalidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtModalidade.Name = "txtModalidade";
             this.txtModalidade.Size = new System.Drawing.Size(164, 22);
             this.txtModalidade.TabIndex = 11;
@@ -80,7 +87,7 @@ namespace estudio
             // btnAtualizar
             // 
             this.btnAtualizar.Location = new System.Drawing.Point(192, 372);
-            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(120, 70);
             this.btnAtualizar.TabIndex = 10;
@@ -92,27 +99,21 @@ namespace estudio
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idModalidade,
             this.modalidade});
             this.dataGridView1.Location = new System.Drawing.Point(364, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(244, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(393, 390);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // modalidade
-            // 
-            this.modalidade.HeaderText = "Modalidade";
-            this.modalidade.MinimumWidth = 6;
-            this.modalidade.Name = "modalidade";
-            this.modalidade.Width = 125;
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(15, 372);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(119, 70);
             this.btnCadastrar.TabIndex = 8;
@@ -123,7 +124,7 @@ namespace estudio
             // txtHora
             // 
             this.txtHora.Location = new System.Drawing.Point(128, 262);
-            this.txtHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHora.Margin = new System.Windows.Forms.Padding(4);
             this.txtHora.Name = "txtHora";
             this.txtHora.Size = new System.Drawing.Size(199, 22);
             this.txtHora.TabIndex = 7;
@@ -132,7 +133,7 @@ namespace estudio
             // txtDiaSemana
             // 
             this.txtDiaSemana.Location = new System.Drawing.Point(128, 204);
-            this.txtDiaSemana.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaSemana.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaSemana.Name = "txtDiaSemana";
             this.txtDiaSemana.Size = new System.Drawing.Size(199, 22);
             this.txtDiaSemana.TabIndex = 6;
@@ -140,7 +141,7 @@ namespace estudio
             // txtProfessor
             // 
             this.txtProfessor.Location = new System.Drawing.Point(128, 150);
-            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4);
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(199, 22);
             this.txtProfessor.TabIndex = 5;
@@ -186,13 +187,56 @@ namespace estudio
             this.lblModalidade.TabIndex = 0;
             this.lblModalidade.Text = "Modalidade";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(177, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "insira um numero";
+            // 
+            // idModalidade
+            // 
+            this.idModalidade.HeaderText = "id";
+            this.idModalidade.MinimumWidth = 6;
+            this.idModalidade.Name = "idModalidade";
+            this.idModalidade.ReadOnly = true;
+            this.idModalidade.Width = 125;
+            // 
+            // modalidade
+            // 
+            this.modalidade.HeaderText = "Modalidade";
+            this.modalidade.MinimumWidth = 6;
+            this.modalidade.Name = "modalidade";
+            this.modalidade.ReadOnly = true;
+            this.modalidade.Width = 125;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(163, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(164, 24);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "idTurma";
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 629);
+            this.ClientSize = new System.Drawing.Size(960, 629);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form9";
             this.Text = "Form9";
             this.Load += new System.EventHandler(this.Form9_Load);
@@ -215,8 +259,12 @@ namespace estudio
         private System.Windows.Forms.Label lblDiaSemana;
         private System.Windows.Forms.Label lblProfessor;
         private System.Windows.Forms.Label lblModalidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.TextBox txtModalidade;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idModalidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

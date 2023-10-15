@@ -24,17 +24,7 @@ namespace estudio
 
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Aluno aluno = new Aluno(maskedTextBox1.Text);
-            if(e.KeyChar == 13)
-            {
-                if (aluno.consultarAluno())
-                {
-                    if (aluno.excluirAluno())
-                    {
-                        MessageBox.Show("Aluno Excluído com sucesso!");
-                    }
-                }
-           }
+           
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -50,6 +40,26 @@ namespace estudio
                     }
                 }
             }*/
+        }
+
+        private void btnExluir_Click(object sender, EventArgs e)
+        {
+            Aluno aluno = new Aluno(maskedTextBox1.Text);
+            
+            
+                if (aluno.consultarAluno())
+                {
+                    if (aluno.excluirAluno())
+                    {
+                        MessageBox.Show("Aluno Excluído com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aluno nao encontrado");
+    
+                    }
+            }
+            
         }
     }
 }

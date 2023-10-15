@@ -23,9 +23,19 @@ namespace estudio
             MySqlDataReader r = od.consultarTodasModalidade();
             while(r.Read())
             {
-                dataGridView1.Rows.Add(r["descricaoModalidade"].ToString());
+                dataGridView1.Rows.Add(r["idEstudio_Modalidade"].ToString(),r["descricaoModalidade"].ToString());
+
             }
                DAO_Conexao.con.Close();
+
+            Turma t = new Turma();
+            MySqlDataReader m = t.consultarTodasTurmas();
+            while (m.Read())
+            {
+                comboBox1.Items.Add(m["idTurma"].ToString());
+
+            }
+            DAO_Conexao.con.Close();
         }   
       
 
@@ -90,7 +100,7 @@ namespace estudio
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
 
-            Turma t = new Turma(txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text);
+            Turma t = new Turma(comboBox1.Text, txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text);
 
             if (t.atualizarTurma())
 
@@ -101,6 +111,21 @@ namespace estudio
             {
                 MessageBox.Show("erro ao Atualizar");
             }
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Turma t = new Turma();
+            MySqlDataReader m = t.consultarTurma(comboBox1.Text);
+            while (m.Read())
+            {
+                txtModalidade.Text = m["idModalidade"].ToString();
+                txtProfessor.Text = m["professorTurma"].ToString();
+                txtDiaSemana.Text = m["diaSemanaTurma"].ToString();
+                txtHora.Text = m["horaTurma"].ToString();
+            }
+            DAO_Conexao.con.Close();
+
         }
     }
 }

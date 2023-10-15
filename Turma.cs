@@ -9,7 +9,7 @@ namespace estudio
 {
     class Turma
     {
-        private String professor, diaSemana, hora, modalidade;
+        private String turma, professor, diaSemana, hora, modalidade;
 
 
         public string Modalidades { get => modalidade; set => modalidade = value; }
@@ -17,8 +17,17 @@ namespace estudio
         public string Professor1 { get => Professor2; set => Professor2 = value; }
         public string Professor2 { get => professor; set => professor = value; }
 
-        public Turma(String modalidades,String professor, String diaSemana, String hora )
+        public Turma(String turma, String modalidades,String professor, String diaSemana, String hora )
         {
+            this.turma = turma;
+            this.modalidade = modalidades;
+            this.professor = professor;
+            this.diaSemana = diaSemana;
+            this.hora = hora;
+        }
+        public Turma(String modalidades, String professor, String diaSemana, String hora)
+        {
+           
             this.modalidade = modalidades;
             this.professor = professor;
             this.diaSemana = diaSemana;
@@ -40,7 +49,12 @@ namespace estudio
         {
            
         }
-
+        public Turma(String modalidades,String diaSemana, String hora)
+        {
+            this.modalidade = modalidades;
+            this.diaSemana = diaSemana;
+            this.hora = hora;
+        }
 
         public bool cadastrarTurma()
         {
@@ -67,7 +81,31 @@ namespace estudio
             return cad;
 
         }
+        public bool verificaTurma()
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Turma where idModalidade='" + modalidade + "' and diaSemanaTurma='" + diaSemana + "' and horaTurma='" + hora + "' and professorTurma='"+ Professor +"'", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+            finally 
+            {
+                DAO_Conexao.con.Close();
+            }
+            return existe;
+        }
         public bool excluirTurma()
         {
 
@@ -75,7 +113,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Turma set ativa = 1 where idModalidade='" + modalidade + "' and diaSemanaTurma='" + diaSemana + "' and horaTurma='" + hora + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Turma set ativa = 1 where idModalidade='" + modalidade + "' and diaSemanaTurma='" + diaSemana + "' and horaTurma='" + hora + "' and professorTurma='" + Professor + "'", DAO_Conexao.con);
 
                 exclui.ExecuteNonQuery();
                 exc = true;
@@ -116,20 +154,17 @@ namespace estudio
         }
 
 
-        public MySqlDataReader consultarTodasModalidade()
+        public MySqlDataReader consultarTodasTurmas()
         {
             //bool cons = false;
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select idModalidade from Turma ", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Turma ", DAO_Conexao.con);
                 Console.WriteLine("select idModalidade from Turma ");
                 resultado = consulta.ExecuteReader();
-                if (resultado.Read())
-                {
-                    // cons = true;
-                }
+               
             }
             catch (Exception ex)
             {
@@ -146,7 +181,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select diaSemanaTurma from Turma ", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Turma ", DAO_Conexao.con);
                 Console.WriteLine("select diaSemanaTurma from Turma ");
                 resultado = consulta.ExecuteReader();
                 if (resultado.Read())
@@ -170,8 +205,8 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                
-                MySqlCommand atualiza = new MySqlCommand("update Turma set modalidade = ('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')", DAO_Conexao.con);
-                Console.WriteLine("update Turma set modalidade = ('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
+                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}' and professorTurma = ' {professor} ' and diaSemanaTurma = ' {diaSemana} ' and horaTurma = ' {hora} ' where idTurma = '{turma}'", DAO_Conexao.con);
+                Console.WriteLine("update Turma set idModalidade = '" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "'");
                 atualiza.ExecuteNonQuery();
                 exc = true;
             }
@@ -186,6 +221,26 @@ namespace estudio
             return exc;
         }
 
+        public MySqlDataReader consultarTurma(String idTurma)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand($"select * from Turma where idTurma = '{idTurma}' ", DAO_Conexao.con);
+                Console.WriteLine($"select * from Turma where idTurma = '{idTurma}'");
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+                    return resultado;
+        }
+        
+
+        
 
 
     };
