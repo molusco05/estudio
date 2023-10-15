@@ -205,7 +205,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                
-                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}' and professorTurma = ' {professor} ' and diaSemanaTurma = ' {diaSemana} ' and horaTurma = ' {hora} ' where idTurma = '{turma}'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}', professorTurma = ' {professor} ', diaSemanaTurma = ' {diaSemana} ', horaTurma = ' {hora} ' where idTurma = '{turma}'", DAO_Conexao.con);
                 Console.WriteLine("update Turma set idModalidade = '" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "'");
                 atualiza.ExecuteNonQuery();
                 exc = true;
@@ -238,9 +238,25 @@ namespace estudio
             }
                     return resultado;
         }
-        
+        public MySqlDataReader consultarTurma()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand($"select * from Turma where idModalidade = '{modalidade}' and professorTurma = '{professor}' and diaSemanaTurma = '{diaSemana}' and horaTurma = '{hora}'", DAO_Conexao.con);
+              
+                resultado = consulta.ExecuteReader();
 
-        
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+
 
 
     };

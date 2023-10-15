@@ -115,6 +115,12 @@ namespace estudio
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
             Turma t = new Turma();
             MySqlDataReader m = t.consultarTurma(comboBox1.Text);
             while (m.Read())
@@ -125,7 +131,6 @@ namespace estudio
                 txtHora.Text = m["horaTurma"].ToString();
             }
             DAO_Conexao.con.Close();
-
         }
     }
 }
