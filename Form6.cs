@@ -36,8 +36,8 @@ namespace estudio
         {
 
 
-            Modadlidade m = new Modadlidade(comboBox1.Text);
-            if (m.atualizarModalidade())
+            Modadlidade m = new Modadlidade();
+            if (m.excluirModalidade(comboBox1.Text))
             {
                 MessageBox.Show("excluido com secesso!!!");
             }

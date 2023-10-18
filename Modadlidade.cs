@@ -138,26 +138,26 @@ namespace estudio
             }
 
             public bool excluirModalidade(String descricao)
+        {
+            bool exc = false;
+            try
             {
-                bool exc = false;
-                try
-                {
-                    DAO_Conexao.con.Open();
-                    MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade='" + descricao + "'", DAO_Conexao.con);
-                Console.WriteLine("update Estudio_Modalidade set ativo = 1 where descricaoModalidade='" + descricao + "'");
-                    exclui.ExecuteNonQuery();
-                    exc = true;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-                finally
-                {
-                    DAO_Conexao.con.Close();
-                }
-                return exc;
+                DAO_Conexao.con.Open();
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidade set ativa = 1 where descricaoModalidade='" + descricao + "'", DAO_Conexao.con);
+
+                exclui.ExecuteNonQuery();
+                exc = true;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return exc;
+        }
 
 
         }

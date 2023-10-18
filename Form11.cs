@@ -56,15 +56,15 @@ namespace estudio
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            Turma m = new  Turma(comboBox1.Text, txtProfessor.Text, txtDiaSemana.Text,txtHora.Text);
-            MySqlDataReader banco = m.consultarTurma(); 
+            Turma t = new Turma(comboBox1.Text, txtProfessor.Text, txtDiaSemana.Text,txtHora.Text);
+            MySqlDataReader banc = t.consultarTurma(); 
             dataGridView1.Rows.Clear();
 
-            while (banco.Read())
+            while (banc.Read())
             {
                 Console.WriteLine("entrou");
               
-                dataGridView1.Rows.Add(banco["idModalidade"].ToString(), banco["professorTurma"].ToString(), banco["diaSemanaTurma"].ToString(), banco["horaTurma"].ToString());
+                dataGridView1.Rows.Add(banc["idModalidade"].ToString(), banc["professorTurma"].ToString(), banc["diaSemanaTurma"].ToString(), banc["horaTurma"].ToString());
 
 
             }

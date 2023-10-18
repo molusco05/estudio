@@ -244,8 +244,8 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand($"select * from Turma where idModalidade = '{modalidade}' and professorTurma = '{professor}' and diaSemanaTurma = '{diaSemana}' and horaTurma = '{hora}'", DAO_Conexao.con);
-              
+                MySqlCommand consulta = new MySqlCommand($"select * from Turma where idModalidade = '{modalidade}' AND professorTurma = '{professor}' AND diaSemanaTurma = '{diaSemana}' AND horaTurma = '{hora}'", DAO_Conexao.con);
+                Console.WriteLine($"select * from Turma where idModalidade = '{modalidade}', professorTurma = '{professor}', diaSemanaTurma = '{diaSemana}', horaTurma = '{hora}'");             
                 resultado = consulta.ExecuteReader();
 
             }
