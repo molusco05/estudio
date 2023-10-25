@@ -157,5 +157,26 @@ namespace estudio
         {
 
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroTurmaAluno ta = new CadastroTurmaAluno();
+            ta.MdiParent = this;
+            ta.Show();
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExcluirTurmaAluno ex = new ExcluirTurmaAluno();
+            ex.MdiParent = this;
+            ex.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroTurmaAluno ca = new CadastroTurmaAluno();
+            ca.MdiParent = this;
+            ca.Show();
+        }
     }
 }

@@ -29,18 +29,98 @@ namespace estudio
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtAulas = new System.Windows.Forms.TextBox();
-            this.txtAlunos = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.lblAulas = new System.Windows.Forms.Label();
-            this.lblAlunos = new System.Windows.Forms.Label();
-            this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.lblAlunos = new System.Windows.Forms.Label();
+            this.lblAulas = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtAlunos = new System.Windows.Forms.TextBox();
+            this.txtAulas = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(62, 36);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(80, 18);
+            this.lblDescricao.TabIndex = 0;
+            this.lblDescricao.Text = "Descrição:";
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.Location = new System.Drawing.Point(62, 81);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(52, 18);
+            this.lblPreco.TabIndex = 1;
+            this.lblPreco.Text = "Preco:";
+            // 
+            // lblAlunos
+            // 
+            this.lblAlunos.AutoSize = true;
+            this.lblAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlunos.Location = new System.Drawing.Point(70, 126);
+            this.lblAlunos.Name = "lblAlunos";
+            this.lblAlunos.Size = new System.Drawing.Size(109, 18);
+            this.lblAlunos.TabIndex = 2;
+            this.lblAlunos.Text = "qtde de Alunos:";
+            // 
+            // lblAulas
+            // 
+            this.lblAulas.AutoSize = true;
+            this.lblAulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAulas.Location = new System.Drawing.Point(70, 163);
+            this.lblAulas.Name = "lblAulas";
+            this.lblAulas.Size = new System.Drawing.Size(100, 18);
+            this.lblAulas.TabIndex = 3;
+            this.lblAulas.Text = "qtde de Aulas:";
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(28, 247);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(561, 33);
+            this.btnCadastrar.TabIndex = 4;
+            this.btnCadastrar.Text = "Cadastar:";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(171, 82);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(418, 20);
+            this.txtPreco.TabIndex = 6;
+            // 
+            // txtAlunos
+            // 
+            this.txtAlunos.Location = new System.Drawing.Point(194, 126);
+            this.txtAlunos.Name = "txtAlunos";
+            this.txtAlunos.Size = new System.Drawing.Size(395, 20);
+            this.txtAlunos.TabIndex = 7;
+            // 
+            // txtAulas
+            // 
+            this.txtAulas.Location = new System.Drawing.Point(194, 163);
+            this.txtAulas.Name = "txtAulas";
+            this.txtAulas.Size = new System.Drawing.Size(395, 20);
+            this.txtAulas.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(171, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(418, 20);
+            this.textBox1.TabIndex = 9;
             // 
             // groupBox1
             // 
@@ -60,86 +140,6 @@ namespace estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
-            // txtAulas
-            // 
-            this.txtAulas.Location = new System.Drawing.Point(194, 163);
-            this.txtAulas.Name = "txtAulas";
-            this.txtAulas.Size = new System.Drawing.Size(395, 20);
-            this.txtAulas.TabIndex = 8;
-            // 
-            // txtAlunos
-            // 
-            this.txtAlunos.Location = new System.Drawing.Point(194, 126);
-            this.txtAlunos.Name = "txtAlunos";
-            this.txtAlunos.Size = new System.Drawing.Size(395, 20);
-            this.txtAlunos.TabIndex = 7;
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(171, 82);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(418, 20);
-            this.txtPreco.TabIndex = 6;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(28, 247);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(561, 33);
-            this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "Cadastar:";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // lblAulas
-            // 
-            this.lblAulas.AutoSize = true;
-            this.lblAulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAulas.Location = new System.Drawing.Point(70, 163);
-            this.lblAulas.Name = "lblAulas";
-            this.lblAulas.Size = new System.Drawing.Size(100, 18);
-            this.lblAulas.TabIndex = 3;
-            this.lblAulas.Text = "qtde de Aulas:";
-            // 
-            // lblAlunos
-            // 
-            this.lblAlunos.AutoSize = true;
-            this.lblAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlunos.Location = new System.Drawing.Point(70, 126);
-            this.lblAlunos.Name = "lblAlunos";
-            this.lblAlunos.Size = new System.Drawing.Size(109, 18);
-            this.lblAlunos.TabIndex = 2;
-            this.lblAlunos.Text = "qtde de Alunos:";
-            // 
-            // lblPreco
-            // 
-            this.lblPreco.AutoSize = true;
-            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreco.Location = new System.Drawing.Point(62, 81);
-            this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(52, 18);
-            this.lblPreco.TabIndex = 1;
-            this.lblPreco.Text = "Preco:";
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(62, 36);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(80, 18);
-            this.lblDescricao.TabIndex = 0;
-            this.lblDescricao.Text = "Descrição:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(171, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(418, 20);
-            this.textBox1.TabIndex = 9;
-            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,15 +156,15 @@ namespace estudio
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtAulas;
-        private System.Windows.Forms.TextBox txtAlunos;
-        private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Label lblAulas;
-        private System.Windows.Forms.Label lblAlunos;
-        private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.Label lblAlunos;
+        private System.Windows.Forms.Label lblAulas;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.TextBox txtAlunos;
+        private System.Windows.Forms.TextBox txtAulas;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

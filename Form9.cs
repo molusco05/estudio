@@ -62,7 +62,7 @@ namespace estudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Turma t = new Turma(txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text);
+            Turma t = new Turma(txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text, txtNAlunos.Text);
            
 
 
@@ -100,7 +100,7 @@ namespace estudio
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
 
-            Turma t = new Turma(comboBox1.Text, txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text);
+            Turma t = new Turma(txtModalidade.Text, txtProfessor.Text, txtDiaSemana.Text, txtHora.Text, txtNAlunos.Text);
 
             if (t.atualizarTurma())
 

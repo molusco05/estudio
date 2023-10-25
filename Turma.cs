@@ -9,17 +9,18 @@ namespace estudio
 {
     class Turma
     {
-        private String turma, professor, diaSemana, hora, modalidade;
+        private String turma, professor, diaSemana, hora, modalidade, NalunosMatriculadosTurma;
 
 
         public string Modalidades { get => modalidade; set => modalidade = value; }
         public string Professor { get => Professor1; set => Professor1 = value; }
         public string Professor1 { get => Professor2; set => Professor2 = value; }
         public string Professor2 { get => professor; set => professor = value; }
+        public string Turma1 { get => turma; set => turma = value; }
 
         public Turma(String turma, String modalidades,String professor, String diaSemana, String hora )
         {
-            this.turma = turma;
+            this.Turma1 = turma;
             this.modalidade = modalidades;
             this.professor = professor;
             this.diaSemana = diaSemana;
@@ -64,7 +65,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "','" + NalunosMatriculadosTurma + "') ", DAO_Conexao.con); 
                 Console.WriteLine("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
                 insere.ExecuteNonQuery();
                 cad = true;
@@ -205,7 +206,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                
-                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}', professorTurma = ' {professor} ', diaSemanaTurma = ' {diaSemana} ', horaTurma = ' {hora} ' where idTurma = '{turma}'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}', professorTurma = ' {professor} ', diaSemanaTurma = ' {diaSemana} ', horaTurma = ' {hora} ' where idTurma = '{Turma1}'", DAO_Conexao.con);
                 Console.WriteLine("update Turma set idModalidade = '" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "'");
                 atualiza.ExecuteNonQuery();
                 exc = true;
@@ -259,5 +260,4 @@ namespace estudio
 
 
 
-    };
-}
+    }}
