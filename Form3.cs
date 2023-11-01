@@ -21,7 +21,7 @@ namespace estudio
         {
             Aluno aluno = new Aluno(maskedTextBox1.Text);
 
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 if (aluno.consultarAluno())
                 {
@@ -38,7 +38,8 @@ namespace estudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(maskedTextBox1.Text, textBox2.Text, textBox3.Text, textBox9.Text, textBox4.Text, textBox10.Text, maskedTextBox2.Text, textBox7.Text, textBox11.Text, maskedTextBox3.Text, textBox8.Text);
+            byte[] foto = converterFotoParaByteArray();
+            Aluno aluno = new Aluno(maskedTextBox1.Text, textBox2.Text, textBox3.Text, textBox9.Text, textBox4.Text, textBox10.Text, maskedTextBox2.Text, textBox7.Text, textBox11.Text, maskedTextBox3.Text, textBox8.Text, foto);
 
             if (aluno.cadastrarAluno())
             {
@@ -55,9 +56,41 @@ namespace estudio
             }
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private byte[] converterFotoParaByteArray()
+        {
+            using (var stream = new System.IO.MemoryStream())
+            {
+                pictureBox1.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                stream.Seek(0, System.IO.SeekOrigin.Begin);
+                byte[] bArray = new byte[stream.Length];
+                stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
+                return bArray;
+            } }
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }
-    }
-}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.Title = "Abrir Foto";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|ALL files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+                try {
+                    pictureBox1.Image = new Bitmap(dialog.OpenFile());
+
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Nao foi possivel carregar a foto: " + ex.Message)
+                     }
+            dialog.Dispose();
+        }
+
+
+
+    } }
+
+
+

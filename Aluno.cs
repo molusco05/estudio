@@ -28,7 +28,7 @@ namespace estudio
 
 
         //contrutores, getters & setters
-        public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone, string email)
+        public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone, string email, byte[] foto)
         {
             setCpf(cpf);
             setNome(nome);
@@ -41,8 +41,12 @@ namespace estudio
             setEstado(estado);
             setTel(telefone);
             setEmail(email);
+            setFoto(foto);
+
+
             
         }
+
 
         public Aluno()
         {
@@ -113,7 +117,9 @@ namespace estudio
         {
             this.foto = foto;
         }
-        //Lembrar: fazer metodos get dps kkkk
+      
+
+
 
         //cadastro de alunos:
         public bool cadastrarAluno()
@@ -125,7 +131,8 @@ namespace estudio
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, " +
                     "telefoneAluno, emailAluno) values('" + cpf + "','" + nome + "','" + rua + "','" + numero + "','" + bairro + "','" + complemento + "','" + cep + "','" + cidade + 
-                    "','" + estado + "','" + telefone + "','" + email + "')", DAO_Conexao.con);
+                    "','" + estado + "','" + telefone + "','" + email + "',@foto)", DAO_Conexao.con);
+                insere.Parameters.AddWithValue("foto", this.foto);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -195,7 +202,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                 //Console.WriteLine("update Estudio_Aluno set nomeAluno = '" + Nome + "', ruaAluno = '" + Rua + "', numeroAluno = '" + Numero + "', bairroAluno = '" + Bairro + "' complementoAluno ='" + Complemento + "',CEPAluno='" + CEP + "', cidadeAluno='" + Cidade + "', estadoAluno='" + Estado + "', telefoneAluno = '" + Telefone + "', emailAluno = '" + Email + "' where CPFAluno = '" + CPF + "'");
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set nomeAluno = '" + nome + "', ruaAluno = '" + rua + "', numeroAluno = '" + numero + "', bairroAluno = '" + bairro + "', complementoAluno ='" + complemento + "',CEPAluno='" + cep + "', cidadeAluno='" + cidade + "', estadoAluno='" + estado + "', telefoneAluno = '" + telefone + "', emailAluno = '" + email + "' where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set nomeAluno = '" + nome + "', ruaAluno = '" + rua + "', numeroAluno = '" + numero + "', bairroAluno = '" + bairro + "', complementoAluno ='" + complemento + "',CEPAluno='" + cep + "', cidadeAluno='" + cidade + "', estadoAluno='" + estado + "', telefoneAluno = '" + telefone + "', emailAluno = '" + email + "' where CPFAluno = '" + cpf + "',fotoAluno = '"+foto+"'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 exc = true;
             }
@@ -208,7 +215,7 @@ namespace estudio
                 DAO_Conexao.con.Close();
             }
             return exc;
-        }//atualizarAluno
+        }
 
 
     }

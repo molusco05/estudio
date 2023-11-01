@@ -30,11 +30,11 @@ namespace estudio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.lblCpf = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,24 +51,25 @@ namespace estudio
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // lblDesc
+            // comboBox2
             // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(57, 67);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(113, 13);
-            this.lblDesc.TabIndex = 0;
-            this.lblDesc.Text = "Descrição Modalidade";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(211, 110);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 4;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // lblCpf
+            // comboBox1
             // 
-            this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(57, 110);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(53, 13);
-            this.lblCpf.TabIndex = 1;
-            this.lblCpf.Text = "Cpf Aluno";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(211, 67);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnCadastrar
             // 
@@ -79,21 +80,23 @@ namespace estudio
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // lblCpf
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(211, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Location = new System.Drawing.Point(57, 110);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(53, 13);
+            this.lblCpf.TabIndex = 1;
+            this.lblCpf.Text = "Cpf Aluno";
             // 
-            // comboBox2
+            // lblDesc
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(211, 110);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(57, 67);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(113, 13);
+            this.lblDesc.TabIndex = 0;
+            this.lblDesc.Text = "Descrição Modalidade";
             // 
             // CadastroTurmaAluno
             // 
@@ -103,6 +106,7 @@ namespace estudio
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroTurmaAluno";
             this.Text = "CadastroTurmaAluno";
+            this.Load += new System.EventHandler(this.CadastroTurmaAluno_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
