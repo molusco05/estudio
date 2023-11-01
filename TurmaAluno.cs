@@ -24,9 +24,9 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                //  MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "','" + NalunosMatriculadosTurma + "') ", DAO_Conexao.con);
-                // Console.WriteLine("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
-                //insere.ExecuteNonQuery();
+                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, Cpf) values('" + IdModalidade + "','" + Cpf + "') ", DAO_Conexao.con);
+                Console.WriteLine("insert into idEstudio_TurmaAluno (idModalidade, Cpf) values('" + IdModalidade + "','" + Cpf + "')");
+                insere.ExecuteNonQuery();
                 cad = true;
             }
             catch (Exception ex)
@@ -39,7 +39,10 @@ namespace estudio
             }
 
             return cad;
-
-
+        }
     }
+}
+
+
+    
 
