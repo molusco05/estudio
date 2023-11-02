@@ -52,6 +52,7 @@ namespace estudio
                 dataGridView1.Rows.Add(banc["idModalidade"].ToString(), banc["professorTurma"].ToString(), banc["diaSemanaTurma"].ToString(), banc["horaTurma"].ToString());
             }
             DAO_Conexao.con.Close();
+            
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -69,6 +70,9 @@ namespace estudio
 
             }
             DAO_Conexao.con.Close();
+            txtDiaSemana.Enabled = false;
+            txtHora.Enabled = false;
+            txtProfessor.Enabled = false;
         }
     }
 }

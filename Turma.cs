@@ -17,14 +17,16 @@ namespace estudio
         public string Professor1 { get => Professor2; set => Professor2 = value; }
         public string Professor2 { get => professor; set => professor = value; }
         public string Turma1 { get => turma; set => turma = value; }
+        public string NalunosMatriculadosTurma1 { get => NalunosMatriculadosTurma; set => NalunosMatriculadosTurma = value; }
 
-        public Turma(String turma, String modalidades,String professor, String diaSemana, String hora )
+        public Turma(String turma, String modalidades,String professor, String diaSemana, String hora, String NalunosMatriculadosTurma )
         {
             this.Turma1 = turma;
             this.modalidade = modalidades;
             this.professor = professor;
             this.diaSemana = diaSemana;
             this.hora = hora;
+            this.NalunosMatriculadosTurma = NalunosMatriculadosTurma;
         }
         public Turma(String modalidades, String professor, String diaSemana, String hora)
         {
@@ -65,7 +67,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "','" + NalunosMatriculadosTurma + "') ", DAO_Conexao.con); 
+                MySqlCommand insere = new MySqlCommand("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma, NalunosMatriculadosTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "','" + NalunosMatriculadosTurma + "') ", DAO_Conexao.con); 
                 Console.WriteLine("insert into Turma (idModalidade, professorTurma, diaSemanaTurma, horaTurma) values('" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "')");
                 insere.ExecuteNonQuery();
                 cad = true;

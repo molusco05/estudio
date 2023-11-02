@@ -173,6 +173,7 @@ namespace estudio
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(556, 30);
             this.txtPreco.TabIndex = 6;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             // 
             // lblAulas
             // 

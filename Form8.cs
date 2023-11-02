@@ -98,6 +98,11 @@ namespace estudio
                     
             }
             DAO_Conexao.con.Close();
+            txtAlunos.Enabled = false;
+            txtAulas.Enabled = false;
+            txtPreco.Enabled = false;
+            
+
 
         }
 
@@ -113,6 +118,11 @@ namespace estudio
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
         {
 
         }

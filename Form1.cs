@@ -16,7 +16,13 @@ namespace estudio
         {
             InitializeComponent();
 
-            menuStrip1.Enabled = false;
+            menuStrip1.Enabled = true;
+            modalidadesToolStripMenuItem.Enabled = false;
+            turrmaToolStripMenuItem.Enabled = false;
+            turmaAlunoToolStripMenuItem.Enabled = false;
+            cadastrarAlunoToolStripMenuItem.Enabled = false;
+            excluirAlunoToolStripMenuItem.Enabled = false;
+            atualizarToolStripMenuItem.Enabled = false;
 
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202200", "cl202200", "Coruja18"))
             {
@@ -47,7 +53,7 @@ namespace estudio
 
         private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            groupBox1.Visible = false;
             Form2 form2 = new Form2();
             form2.MdiParent = this;
             form2.Show();
@@ -70,7 +76,21 @@ namespace estudio
             {
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
-                cadastrarAlunoToolStripMenuItem.Enabled = false;
+                
+                cadsatrarModalidadeToolStripMenuItem.Enabled = false;
+                atualizarModalidadeToolStripMenuItem.Enabled = false;
+                excluirModalidadeToolStripMenuItem.Enabled = false;
+                conaultarModalidadeToolStripMenuItem.Enabled = true;
+                turmaAlunoToolStripMenuItem.Enabled = false;
+                buscarTurmaToolStripMenuItem.Enabled = true;
+                cadastrarTurmaToolStripMenuItem.Enabled = false;
+                excluirToolStripMenuItem.Enabled = false;
+                cadastrarToolStripMenuItem.Enabled = false;
+                excluirTurmaToolStripMenuItem.Enabled = false;
+                
+
+                
+
             }
         }
 
@@ -174,7 +194,7 @@ namespace estudio
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroTurmaAluno ca = new CadastroTurmaAluno();
+            ConsultaTurmaAluno ca = new ConsultaTurmaAluno();
             ca.MdiParent = this;
             ca.Show();
         }

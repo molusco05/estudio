@@ -40,19 +40,24 @@ namespace estudio
         {
             byte[] foto = converterFotoParaByteArray();
             Aluno aluno = new Aluno(maskedTextBox1.Text, textBox2.Text, textBox3.Text, textBox9.Text, textBox4.Text, textBox10.Text, maskedTextBox2.Text, textBox7.Text, textBox11.Text, maskedTextBox3.Text, textBox8.Text, foto);
-
-            if (aluno.cadastrarAluno())
-            {
-                MessageBox.Show("Cadastro Realizado com sucesso!");
-
-                if (aluno.atualizarAluno())
+            if (aluno.verificaCPF()){
+                if (aluno.cadastrarAluno())
                 {
-                    MessageBox.Show("Atualizado com sucesso");
+                    MessageBox.Show("Cadastro Realizado com sucesso!");
+
+                    if (aluno.atualizarAluno())
+                    {
+                        MessageBox.Show("Atualizado com sucesso");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro no cadastro");
                 }
             }
             else
             {
-                MessageBox.Show("Erro no cadastro");
+                MessageBox.Show("CPF INVALIDO!");
             }
         }
 
@@ -83,7 +88,7 @@ namespace estudio
 
                 } catch (Exception ex)
                 {
-                    MessageBox.Show("Nao foi possivel carregar a foto: " + ex.Message)
+                    MessageBox.Show("Nao foi possivel carregar a foto: " + ex.Message);
                      }
             dialog.Dispose();
         }

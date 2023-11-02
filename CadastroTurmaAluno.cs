@@ -8,31 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace estudio
 {
     public partial class CadastroTurmaAluno : Form
     {
+
+        
         public CadastroTurmaAluno()
         {
             InitializeComponent();
 
             WindowState = FormWindowState.Maximized;
-            Modadlidade ta = new Modadlidade();
-            MySqlDataReader r = ta.consultarModalidade();
+            Turma ta = new Turma();
+            MySqlDataReader r = ta.consultarTodasTurmas();
             while (r.Read())
             {
-                comboBox1.Items.Add(r["IdEstudio_Modalidade"].ToString());
+                comboBox1.Items.Add($"{r["idTurma"]} - {r["descricao"]}");
 
             }
             DAO_Conexao.con.Close();
 
 
             Aluno t = new Aluno();
-            MySqlDataReader a = t.consultarAluno();
+            MySqlDataReader a = t.consultarCpf();
             while (a.Read())
             {
-                comboBox2.Items.Add(a["estudio_Aluno"].ToString());
+                comboBox2.Items.Add(a["CPFAluno"].ToString());
 
             }
             DAO_Conexao.con.Close();
@@ -40,28 +43,12 @@ namespace estudio
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TurmaAluno t = new TurmaAluno();
-            MySqlDataReader m = t.cadastrarTurmaAluno(comboBox1.Text);
-            while (m.Read())
-            {
-                comboBox1.Text = m["idModalidade"].ToString();
-                
-         
-            }
-            DAO_Conexao.con.Close();
+          
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TurmaAluno t = new TurmaAluno();
-            MySqlDataReader m = t.cadastrarTurmaAluno(comboBox1.Text);
-            while (m.Read())
-            {
-                comboBox2.Text = m["CPFAluno"].ToString();
-
-
-            }
-            DAO_Conexao.con.Close();
+            
         }
 
         private void CadastroTurmaAluno_Load(object sender, EventArgs e)
@@ -71,6 +58,24 @@ namespace estudio
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            var idTurma = comboBox1.Text.Split('-')[0];
+            TurmaAluno ta = new TurmaAluno(idTurma, comboBox2.Text);
+            
+
+
+            if (ta.cadastrarTurmaAluno())
+            {
+                MessageBox.Show("cadastrado com secesso!!!");
+            }
+            else
+            {
+                MessageBox.Show("erro ao cadastrar");
+            }
 
         }
     }
