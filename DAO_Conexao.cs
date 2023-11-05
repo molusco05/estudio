@@ -58,7 +58,7 @@ namespace estudio
             try
             {
                 con.Open();
-                MySqlCommand busca = new MySqlCommand("select * from Estudio_Login where usuario='" + usuario + "' and senha='" + senha + "'", con);
+                MySqlCommand busca = new MySqlCommand("select * from Estudio_Login where usuario='" + usuario + "' and senha='" + senha + "'", DAO_Conexao.con);
                 MySqlDataReader resultado = busca.ExecuteReader();
                 if (resultado.Read())
                 {
