@@ -16,18 +16,14 @@ namespace estudio
         {
             InitializeComponent();
 
-            menuStrip1.Enabled = true;
-            modalidadesToolStripMenuItem.Enabled = false;
-            turrmaToolStripMenuItem.Enabled = false;
-            turmaAlunoToolStripMenuItem.Enabled = false;
-            cadastrarAlunoToolStripMenuItem.Enabled = false;
-            excluirAlunoToolStripMenuItem.Enabled = false;
-            atualizarToolStripMenuItem.Enabled = false;
+           
+
 
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202200", "cl202200", "Coruja18"))
             {
                 Console.WriteLine("Conectado");
             }
+           
             else
             {
                 Console.WriteLine("Erro de conexâo");
