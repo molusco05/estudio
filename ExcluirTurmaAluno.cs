@@ -27,7 +27,7 @@ namespace estudio
             }
             DAO_Conexao.con.Close();
         }
-
+ //escolher de qual turmao cpf sera excluido----------adicionar combobox com a função por idturma
         private void groupBox1_Enter(object sender, EventArgs e)
         {
            
