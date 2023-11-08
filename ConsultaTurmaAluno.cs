@@ -75,3 +75,4 @@ namespace estudio
     }
     
 }
+   //puxar no id da turma e da modalidade
