@@ -21,7 +21,8 @@ namespace estudio
             MySqlDataReader r = ta.consultaTurmaAluno();
             while (r.Read())
             {
-                comboBox1.Items.Add($"{r["Cpf"]} | {r["IdTurma"]}");
+                comboBox1.Items.Add($"{r["Cpf"]}" );
+                comboBox2.Items.Add($"{r["IdTurma"]}");
 
             }
             DAO_Conexao.con.Close();
