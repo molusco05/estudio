@@ -208,7 +208,7 @@ namespace estudio
             {
                 DAO_Conexao.con.Open();
                
-                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}', professorTurma = ' {professor} ', diaSemanaTurma = ' {diaSemana} ', horaTurma = ' {hora} ' where idTurma = '{Turma1}'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand($"update Turma set idModalidade = '{modalidade}', professorTurma = '{professor}', diaSemanaTurma = '{diaSemana}', horaTurma = '{hora}', NalunosMatriculadosTurma ='{NalunosMatriculadosTurma}' where idTurma = '{Turma1}'", DAO_Conexao.con);
                 Console.WriteLine("update Turma set idModalidade = '" + modalidade + "','" + professor + "','" + diaSemana + "','" + hora + "'");
                 atualiza.ExecuteNonQuery();
                 exc = true;

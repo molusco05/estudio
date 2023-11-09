@@ -53,6 +53,9 @@ namespace estudio
 
             }
             DAO_Conexao.con.Close();
+            txtHora.Enabled = false;
+            txtQntd.Enabled = false;
+            txtDia.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,17 +65,23 @@ namespace estudio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            TurmaAluno ta = new TurmaAluno();
+            var idTurma = comboBox1.Text.Split('-')[0];
+            TurmaAluno ta = new TurmaAluno(idTurma);
             
             MySqlDataReader r = ta.consultaNomes();
+            dataGridView1.Rows.Clear();
             while (r.Read())
             {
                 dataGridView1.Rows.Add(r["nomeAluno"].ToString());
 
             }
             DAO_Conexao.con.Close();
+            txtHora.Enabled = false;
+            txtQntd.Enabled = false;
+            txtDia.Enabled = false; 
+
         }
     }
     
 }
-   //puxar no id da turma e da modalidade
+  

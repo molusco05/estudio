@@ -73,7 +73,7 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consult = new MySqlCommand("select * from Estudio_TurmaAluno", DAO_Conexao.con);
+                MySqlCommand consult = new MySqlCommand("select distinct IdTurma from Estudio_TurmaAluno", DAO_Conexao.con);
                 result = consult.ExecuteReader();
 
             }
@@ -116,7 +116,25 @@ namespace estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consult = new MySqlCommand("select nomealuno FROM Estudio_TurmaAluno ta inner join Estudio_Aluno a on ta.Cpf = a.CPFAluno where IdTurma = 11", DAO_Conexao.con);
+                MySqlCommand consult = new MySqlCommand("select nomealuno FROM Estudio_TurmaAluno ta inner join Estudio_Aluno a on ta.Cpf = a.CPFAluno where ta.IdTurma = '"+IdTurma+"'", DAO_Conexao.con);
+                result = consult.ExecuteReader();
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return result;
+        }
+
+        public MySqlDataReader consultarCpf()
+        {
+            MySqlDataReader result = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consult = new MySqlCommand("select * from Estudio_TurmaAluno where IdTurma='"+IdTurma+"'", DAO_Conexao.con);
                 result = consult.ExecuteReader();
 
             }

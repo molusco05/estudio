@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace estudio
 {
@@ -21,13 +22,14 @@ namespace estudio
             MySqlDataReader r = ta.consultaTurmaAluno();
             while (r.Read())
             {
-                comboBox1.Items.Add($"{r["Cpf"]}" );
+               
                 comboBox2.Items.Add($"{r["IdTurma"]}");
+                
 
             }
             DAO_Conexao.con.Close();
         }
- //escolher de qual turmao cpf sera excluido----------adicionar combobox com a função por idturma
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
            
@@ -36,10 +38,11 @@ namespace estudio
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            var cpf = comboBox1.Text.Split('|')[0];
-            var idModalidade = comboBox1.Text.Split('|')[1];
-            TurmaAluno ta = new TurmaAluno(idModalidade, cpf);
+
+        {   //exclui da tabela turmaAluno e diminui o numero de alunos na tabela turma
+            var cpf = comboBox1.Text;
+            var IdTurma = comboBox2.Text;
+            TurmaAluno ta = new TurmaAluno(IdTurma, cpf);
 
 
             if (ta.excluirTurmaAluno())
@@ -51,6 +54,23 @@ namespace estudio
             {
                 MessageBox.Show("erro ao excluir");
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TurmaAluno t = new TurmaAluno(comboBox2.Text);
+            MySqlDataReader m = t.consultarCpf();
+            comboBox1.Items.Clear();
+            while (m.Read())
+            {
+                comboBox1.Items.Add($"{m["Cpf"]}");
+            }
+            DAO_Conexao.con.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -29,29 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnConsultarTodas = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.txtDiaSemana = new System.Windows.Forms.TextBox();
+            this.txtProfessor = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idModalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.professorTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaSemanaTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.txtDiaSemana = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnConsultarTodas = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnConsultarTodas);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.button2);
@@ -72,6 +76,109 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Turma";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnConsultarTodas
+            // 
+            this.btnConsultarTodas.Location = new System.Drawing.Point(194, 324);
+            this.btnConsultarTodas.Name = "btnConsultarTodas";
+            this.btnConsultarTodas.Size = new System.Drawing.Size(122, 43);
+            this.btnConsultarTodas.TabIndex = 12;
+            this.btnConsultarTodas.Text = "consultar todas";
+            this.btnConsultarTodas.UseVisualStyleBackColor = true;
+            this.btnConsultarTodas.Click += new System.EventHandler(this.btnConsultarTodas_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(43, 324);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(118, 43);
+            this.btnConsultar.TabIndex = 11;
+            this.btnConsultar.Text = "consultar uma";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(240, 364);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(8, 8);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(43, 359);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(160, 265);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(311, 22);
+            this.txtHora.TabIndex = 8;
+            // 
+            // txtDiaSemana
+            // 
+            this.txtDiaSemana.Location = new System.Drawing.Point(163, 210);
+            this.txtDiaSemana.Name = "txtDiaSemana";
+            this.txtDiaSemana.Size = new System.Drawing.Size(308, 22);
+            this.txtDiaSemana.TabIndex = 7;
+            // 
+            // txtProfessor
+            // 
+            this.txtProfessor.Location = new System.Drawing.Point(160, 150);
+            this.txtProfessor.Name = "txtProfessor";
+            this.txtProfessor.Size = new System.Drawing.Size(308, 22);
+            this.txtProfessor.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(163, 63);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(311, 24);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(84, 271);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "hora";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "dia da semana";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(63, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "professor";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "id da Turma:";
             // 
             // dataGridView1
             // 
@@ -116,108 +223,21 @@
             this.horaTurma.Name = "horaTurma";
             this.horaTurma.Width = 125;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "modalidade";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(66, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "modalidade:";
             // 
-            // label2
+            // textBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 150);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "professor";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 213);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "dia da semana";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 271);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "hora";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(160, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // txtProfessor
-            // 
-            this.txtProfessor.Location = new System.Drawing.Point(160, 150);
-            this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(308, 22);
-            this.txtProfessor.TabIndex = 6;
-            // 
-            // txtDiaSemana
-            // 
-            this.txtDiaSemana.Location = new System.Drawing.Point(163, 210);
-            this.txtDiaSemana.Name = "txtDiaSemana";
-            this.txtDiaSemana.Size = new System.Drawing.Size(308, 22);
-            this.txtDiaSemana.TabIndex = 7;
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(160, 265);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(311, 22);
-            this.txtHora.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(43, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(240, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(8, 8);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(43, 324);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(118, 43);
-            this.btnConsultar.TabIndex = 11;
-            this.btnConsultar.Text = "consultar uma";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnConsultarTodas
-            // 
-            this.btnConsultarTodas.Location = new System.Drawing.Point(194, 324);
-            this.btnConsultarTodas.Name = "btnConsultarTodas";
-            this.btnConsultarTodas.Size = new System.Drawing.Size(122, 43);
-            this.btnConsultarTodas.TabIndex = 12;
-            this.btnConsultarTodas.Text = "consultar todas";
-            this.btnConsultarTodas.UseVisualStyleBackColor = true;
-            this.btnConsultarTodas.Click += new System.EventHandler(this.btnConsultarTodas_Click);
+            this.textBox1.Location = new System.Drawing.Point(160, 111);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 22);
+            this.textBox1.TabIndex = 14;
             // 
             // Form11
             // 
@@ -255,5 +275,7 @@
         private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.TextBox txtDiaSemana;
         private System.Windows.Forms.TextBox txtProfessor;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
